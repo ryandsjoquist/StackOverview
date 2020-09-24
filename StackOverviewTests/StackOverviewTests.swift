@@ -20,16 +20,17 @@ class StackOverviewTests: XCTestCase {
 
     func testURLSession() throws {
         let exp = expectation(description: "Loading answers")
-
-        DataServices.loadStackOFAnswers { answers in
-            print("got here")
+        var items: [DataStackOverflowItem] = []
+        
+        DataServices.loadStackOFAnswers(requestType: StackOverflowRequestType.comments) { retrievedItems in
+            items = retrievedItems
             exp.fulfill()
             
         }
         waitForExpectations(timeout: 30)
 
             // our expectation has been fulfilled, so we can check the result is correct
-//        XCTAssertEqual(parser.stories.count, 20, "We should have loaded exactly 20 stories.")
+        XCTAssertEqual(items.count, 30, "We should have loaded exactly 30 answers from request.")
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }

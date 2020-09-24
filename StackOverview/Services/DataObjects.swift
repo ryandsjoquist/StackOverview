@@ -7,6 +7,41 @@
 
 import Foundation
 
+// future work for getting all stack overflow api request types
+
+enum StackOverflowRequestType : String {
+    case answers
+    case badges
+    case comments
+    case events
+    case info
+    case posts
+    case questions
+    case search
+    case tags
+    case users
+}
+
+/*
+ We'll stick to just stackoverflow for now as there are many additional sites
+ potentially under the API request site
+ */
+
+
+struct DataStackOverflowResponse: Codable {
+    let quota_remaining: Int?
+    let quota_max: Int?
+    let items: [DataStackOverflowItem]?
+    let has_more: Bool?
+    
+    init(quotaRemaining: Int?, quotaMax: Int?, items: [DataStackOverflowItem]?, hasMore: Bool?) {
+        self.quota_remaining = quotaRemaining
+        self.quota_max = quotaMax
+        self.items = items
+        self.has_more = hasMore
+    }
+}
+
 struct DataStackOverflowItem: Codable {
     let owner: DataStackOverflowOwner?
     let down_vote_count: Int?
