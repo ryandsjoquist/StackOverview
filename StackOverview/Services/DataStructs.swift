@@ -127,27 +127,27 @@ struct DataStackOverflowOwner: Codable {
 struct StackOFQuestion {
     let owner: StackOFOwner
     let isAnswered: Bool
-    let acceptedAnswerId: Int
-    let answerCount: Int
+    let acceptedAnswerId: Int?
+    let answerCount: Int?
     let score: Int
-    let lastActivityDate: Date
-    let creationDate: Date
-    let lastEditDate: Date
+    let lastActivityDate: String
+    let lastEditDate: String
+    let creationDate: String
     let questionId: Int
     let link: String
-    let title: String
+    let title: String?
 }
 
-struct StackOFAnswers {
+struct StackOFAnswer {
     let owner: StackOFOwner
-    let lastActivityDate: Int
-    let lastEditDate: Int
-    let creationDate: Int
+    let lastActivityDate: String
+    let lastEditDate: String
+    let creationDate: String
     let answerId: Int
     let questionId: Int
     let link: String
-    let title: String
-    let body: String
+    let title: String?
+    let body: String?
 }
 
 struct StackOFOwner {
@@ -158,8 +158,4 @@ struct StackOFOwner {
     let profile_image: String
     let display_name: String
     let link: String
-}
-
-class DataObjects {
-    
 }

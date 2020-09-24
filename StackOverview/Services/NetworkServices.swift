@@ -7,10 +7,9 @@
 
 import Foundation
 
-class DataServices {
+class NetworkServices {
     
     static let baseSOUrl = "https://api.stackexchange.com/2.2/"
-    
     
     static func readLocalFile(forName name: String) -> Data? {
         do {
@@ -52,3 +51,4 @@ class DataServices {
         task.resume()
     }
 }
+

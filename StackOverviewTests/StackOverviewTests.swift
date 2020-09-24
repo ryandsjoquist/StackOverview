@@ -36,7 +36,7 @@ class StackOverviewTests: XCTestCase {
         let exp = expectation(description: "Loading answers")
         var items: [DataStackOverflowItem] = []
         
-        DataServices.loadStackOFAnswers(requestType: StackOverflowRequestType.comments) { retrievedItems in
+        NetworkServices.loadStackOFAnswers(requestType: StackOverflowRequestType.comments) { retrievedItems in
             items = retrievedItems
             exp.fulfill()
         }
