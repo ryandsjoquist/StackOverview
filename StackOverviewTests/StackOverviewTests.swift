@@ -18,7 +18,18 @@ class StackOverviewTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
+    func testURLSession() throws {
+        let exp = expectation(description: "Loading answers")
+
+        DataServices.loadStackOFAnswers { answers in
+            print("got here")
+            exp.fulfill()
+            
+        }
+        waitForExpectations(timeout: 30)
+
+            // our expectation has been fulfilled, so we can check the result is correct
+//        XCTAssertEqual(parser.stories.count, 20, "We should have loaded exactly 20 stories.")
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
