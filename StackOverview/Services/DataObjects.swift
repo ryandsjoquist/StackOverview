@@ -24,10 +24,12 @@ enum StackOverflowRequestType : String {
 
 /*
  We'll stick to just stackoverflow for now as there are many additional sites
- potentially under the API request site
+ potentially under the API request site.
+ 
+ this is the standard https://github.com/surfstudio/StackOv/tree/master/StackOv
  */
 
-
+// We get only 30 returned items initially, which is totally fine.
 struct DataStackOverflowResponse: Codable {
     let quota_remaining: Int?
     let quota_max: Int?
@@ -47,7 +49,10 @@ struct DataStackOverflowItem: Codable {
     let down_vote_count: Int?
     let up_vote_count: Int?
     let is_accepted: Bool?
+    let is_answered: Bool?
     let score: Int?
+    let answer_count: Int?
+    let accepted_answer_id: Int?
     let last_activity_date: Int?
     let last_edit_date: Int?
     let creation_date: Int?
@@ -61,7 +66,10 @@ struct DataStackOverflowItem: Codable {
          downVoteCount: Int?,
          upVoteCount: Int?,
          isAccepted: Bool?,
+         isAnswered: Bool?,
          score: Int?,
+         answerCount: Int?,
+         acceptedAnswerId: Int?,
          lastActivityDate: Int?,
          lastEditDate: Int?,
          creationDate: Int?,
@@ -75,7 +83,10 @@ struct DataStackOverflowItem: Codable {
         self.down_vote_count = downVoteCount
         self.up_vote_count = upVoteCount
         self.is_accepted = isAccepted
+        self.is_answered = isAnswered
         self.score = score
+        self.answer_count = answerCount
+        self.accepted_answer_id = acceptedAnswerId
         self.last_activity_date = lastActivityDate
         self.last_edit_date = lastEditDate
         self.creation_date = creationDate
@@ -111,6 +122,20 @@ struct DataStackOverflowOwner: Codable {
         self.display_name = displayName
         self.link = link
     }
+}
+
+struct StackOFQuestion {
+    let owner: StackOFOwner
+    let isAnswered: Bool
+    let acceptedAnswerId: Int
+    let answerCount: Int
+    let score: Int
+    let lastActivityDate: Date
+    let creationDate: Date
+    let lastEditDate: Date
+    let questionId: Int
+    let link: String
+    let title: String
 }
 
 struct StackOFAnswers {
