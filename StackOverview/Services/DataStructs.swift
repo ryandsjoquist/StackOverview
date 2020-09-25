@@ -9,7 +9,7 @@ import Foundation
 
 // future work for getting all stack overflow api request types
 
-enum StackOverflowRequestType : String {
+enum StackOverflowRequestType: String {
     case answers
     case badges
     case comments
@@ -20,6 +20,16 @@ enum StackOverflowRequestType : String {
     case search
     case tags
     case users
+}
+
+enum StackOverflowRequestSite: String {
+    case stackoverflow
+    case serverfault
+    case superuser
+    case meta
+    case webapps
+    case gaming
+    case webmasters
 }
 
 /*

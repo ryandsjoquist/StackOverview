@@ -1,5 +1,5 @@
 //
-//  DataTranslationService.swift
+//  DataServices.swift
 //  StackOverview
 //
 //  Created by Bonhoffer on 9/23/20.
@@ -7,10 +7,19 @@
 
 import Foundation
 
-class DataTranslationService {
+class DataServices {
+    
     static var questions: [StackOFQuestion] = []
-    static var answers: [StackOFAnswer] = []
-    static func convertDataToLocal(items: [DataStackOverflowItem]) {
+    static var answers: [StackOFAnswer] = [] 
+    
+    static func loadItemsFromRequest() {
+        NetworkServices.loadStackOFAnswers(requestResultType: .questions,
+                                           requestResultSite: .stackoverflow) { items in
+            convertDataToLocalItems(items)
+        }
+    }
+    
+    static func convertDataToLocalItems(_ items: [DataStackOverflowItem]) {
         for item in items {
             let localOwner = StackOFOwner.init(reputation: item.owner?.reputation ?? 0, user_id: item.owner?.user_id ?? 0, user_type: item.owner?.user_type ?? "", accept_rate: item.owner?.accept_rate ?? 0, profile_image: item.owner?.profile_image ?? "", display_name: item.owner?.display_name ?? "", link: item.owner?.link ?? "")
             if item.answer_id != nil {
