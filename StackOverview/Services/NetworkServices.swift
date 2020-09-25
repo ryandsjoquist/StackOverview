@@ -13,9 +13,16 @@ class NetworkServices {
     
     static func loadStackOFRequest(requestResultType: StackOverflowRequestType,
                                    requestResultSite: StackOverflowRequestSite,
+                                   requestQuery: String?,
                                    completionHandler: @escaping ([DataStackOverflowItem]) -> ()) {
         //TODO: make site and type of return, currently answers for stackoverflow an enum to let people search for questions or other things for StackOverflow sibling sites.
-        guard let url = URL(string: baseSOUrl+requestResultType.rawValue+"?pagesize=100&order=desc&sort=activity&site="+requestResultSite.rawValue) else { return }
+        var queryString = ""
+        if let requestQuery = requestQuery {
+            queryString = requestQuery
+        } else {
+            queryString = "?pagesize=100&order=desc&sort=activity&site="
+        }
+        guard let url = URL(string: baseSOUrl+requestResultType.rawValue+queryString+requestResultSite.rawValue) else { return }
         var request = URLRequest(url: url)
         let config = URLSessionConfiguration.default
         request.httpMethod = "GET"

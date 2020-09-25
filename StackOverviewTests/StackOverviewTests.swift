@@ -27,24 +27,29 @@ class StackOverviewTests: XCTestCase {
     func testURLSession() throws {
         let exp = expectation(description: "Loading answers")
         
-        NetworkServices.loadStackOFAnswers(requestResultType: .questions,
-                                           requestResultSite: .stackoverflow) { [weak self] retrievedItems in
+        NetworkServices.loadStackOFRequest(requestResultType: .questions,
+                                           requestResultSite: .stackoverflow,
+                                           requestQuery: nil) { [weak self] retrievedItems in
             self?.items = retrievedItems
             exp.fulfill()
         }
         waitForExpectations(timeout: 15)
 
-        XCTAssertEqual(items.count, 30, "We should have loaded exactly 30 answers from request.")
+        XCTAssertTrue(items.count > 30, "We should have loaded more then 30 answers from request.")
 
     }
 
     func testConversionSuccess() throws {
         let exp = expectation(description: "Loading answers")
         NetworkServices.loadStackOFRequest(requestResultType: .questions,
-                                           requestResultSite: .stackoverflow) { [weak self] retrievedItems in
-                XCTAssertTrue(DataServices.convertDataToLocalQuestion(retrievedItems).count > 0)
+                                           requestResultSite: .stackoverflow,
+                                           requestQuery: nil) { [weak self] retrievedItems in
+                self?.items = retrievedItems
                 exp.fulfill()
             }
+        if let questionItems = items as? [DataStackOverflowItem] {
+            XCTAssertTrue(DataServices.convertDataToLocalQuestion(questionItems).count > 0)
+        }
 
         waitForExpectations(timeout: 15)
         
