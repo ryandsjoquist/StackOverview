@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ED76F109251D9AC0006DE1C5 /* ItemCustomTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED76F108251D9AC0006DE1C5 /* ItemCustomTableCell.xib */; };
 		EDDF8083251A9A17004A6596 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDF8082251A9A17004A6596 /* AppDelegate.swift */; };
 		EDDF8085251A9A17004A6596 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDF8084251A9A17004A6596 /* SceneDelegate.swift */; };
 		EDDF8087251A9A17004A6596 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDF8086251A9A17004A6596 /* HomeViewController.swift */; };
@@ -53,6 +54,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		ED76F108251D9AC0006DE1C5 /* ItemCustomTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemCustomTableCell.xib; sourceTree = "<group>"; };
 		EDDF807F251A9A17004A6596 /* StackOverview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StackOverview.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDDF8082251A9A17004A6596 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDDF8084251A9A17004A6596 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 		EDDF8136251D4060004A6596 /* CustomTableViewCells */ = {
 			isa = PBXGroup;
 			children = (
+				ED76F108251D9AC0006DE1C5 /* ItemCustomTableCell.xib */,
 				EDDF8131251D3D22004A6596 /* ItemCustomTableCell.swift */,
 			);
 			path = CustomTableViewCells;
@@ -293,6 +296,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED76F109251D9AC0006DE1C5 /* ItemCustomTableCell.xib in Resources */,
 				EDDF808F251A9A19004A6596 /* LaunchScreen.storyboard in Resources */,
 				EDDF80F7251C38A3004A6596 /* test.json in Resources */,
 				EDDF808C251A9A19004A6596 /* Assets.xcassets in Resources */,

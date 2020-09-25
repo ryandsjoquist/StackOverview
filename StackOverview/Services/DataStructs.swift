@@ -5,7 +5,7 @@
 //  Created by Bonhoffer on 9/23/20.
 //
 
-import Foundation
+import UIKit
 
 // future work for getting all stack overflow api request types
 

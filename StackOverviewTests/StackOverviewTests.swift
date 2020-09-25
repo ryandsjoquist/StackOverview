@@ -40,10 +40,9 @@ class StackOverviewTests: XCTestCase {
 
     func testConversionSuccess() throws {
         let exp = expectation(description: "Loading answers")
-        NetworkServices.loadStackOFAnswers(requestResultType: .questions,
+        NetworkServices.loadStackOFRequest(requestResultType: .questions,
                                            requestResultSite: .stackoverflow) { [weak self] retrievedItems in
-                DataServices.convertDataToLocalItems(retrievedItems)
-                XCTAssertTrue(DataServices.questions.count > 0)
+                XCTAssertTrue(DataServices.convertDataToLocalQuestion(retrievedItems).count > 0)
                 exp.fulfill()
             }
 

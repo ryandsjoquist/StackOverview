@@ -11,11 +11,11 @@ class NetworkServices {
     
     static let baseSOUrl = "https://api.stackexchange.com/2.2/"
     
-    static func loadStackOFAnswers(requestResultType: StackOverflowRequestType,
+    static func loadStackOFRequest(requestResultType: StackOverflowRequestType,
                                    requestResultSite: StackOverflowRequestSite,
                                    completionHandler: @escaping ([DataStackOverflowItem]) -> ()) {
         //TODO: make site and type of return, currently answers for stackoverflow an enum to let people search for questions or other things for StackOverflow sibling sites.
-        guard let url = URL(string: baseSOUrl+requestResultType.rawValue+"?order=desc&sort=activity&site="+requestResultSite.rawValue) else { return }
+        guard let url = URL(string: baseSOUrl+requestResultType.rawValue+"?pagesize=100&order=desc&sort=activity&site="+requestResultSite.rawValue) else { return }
         var request = URLRequest(url: url)
         let config = URLSessionConfiguration.default
         request.httpMethod = "GET"
