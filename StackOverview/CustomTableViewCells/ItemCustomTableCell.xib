@@ -75,7 +75,7 @@
                         <rect key="frame" x="4" y="70" width="497" height="211"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ips-oN-D25">
-                                <rect key="frame" x="8" y="23" width="481" height="130"/>
+                                <rect key="frame" x="8" y="23" width="481" height="119"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -92,18 +92,6 @@
                                 <nil key="highlightedColor"/>
                                 <size key="shadowOffset" width="0.0" height="0.0"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Preferred Answer:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ne8-6G-ens">
-                                <rect key="frame" x="176" y="188.5" width="313" height="14.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Q ID: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dIK-cx-mz5">
-                                <rect key="frame" x="8" y="169.5" width="31.5" height="15"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Timestamp" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hef-by-uiA">
                                 <rect key="frame" x="8" y="4" width="298" height="15"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -117,35 +105,64 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="54T-Wu-xw5">
-                                <rect key="frame" x="16" y="161" width="465" height="0.5"/>
+                                <rect key="frame" x="16" y="150" width="465" height="0.5"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="0.5" id="b6P-az-30t"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tjJ-4t-g4S">
+                                <rect key="frame" x="176" y="173" width="313" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="H6m-AW-zfO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="12"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" red="0.028700117019999999" green="0.087573654949999996" blue="0.23530834910000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="answerWasSelectedWithSender:" destination="4x9-so-Hsi" eventType="touchUpInside" id="7QE-Qi-fH5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cgz-js-TEP">
+                                <rect key="frame" x="8" y="154.5" width="41" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="dbY-3I-i32"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="25" id="lt2-Dk-u2K"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" red="0.028700117019999999" green="0.087573654949999996" blue="0.23530834910000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="answerWasSelectedWithSender:" destination="4x9-so-Hsi" eventType="touchUpInside" id="1S5-ta-cKY"/>
+                                    <action selector="questionIdSelectedWithSender:" destination="4x9-so-Hsi" eventType="touchUpInside" id="esf-qR-Uje"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="ne8-6G-ens" secondAttribute="bottom" constant="8" id="0cu-hF-G7Z"/>
-                            <constraint firstItem="dIK-cx-mz5" firstAttribute="leading" secondItem="Zg1-Fe-kHf" secondAttribute="leading" constant="8" id="4U5-3C-s9a"/>
-                            <constraint firstAttribute="trailing" secondItem="ne8-6G-ens" secondAttribute="trailing" constant="8" id="HO6-mx-4Np"/>
-                            <constraint firstItem="vHV-Tg-FON" firstAttribute="top" secondItem="dIK-cx-mz5" secondAttribute="bottom" constant="4" id="Ofy-6V-kGu"/>
+                            <constraint firstAttribute="bottom" secondItem="tjJ-4t-g4S" secondAttribute="bottom" constant="8" id="7Tc-Np-JUR"/>
+                            <constraint firstAttribute="trailing" secondItem="tjJ-4t-g4S" secondAttribute="trailing" constant="8" id="DOL-SS-byB"/>
+                            <constraint firstItem="tjJ-4t-g4S" firstAttribute="leading" secondItem="vHV-Tg-FON" secondAttribute="trailing" constant="8" id="KKt-Bk-tas"/>
+                            <constraint firstItem="tjJ-4t-g4S" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="cgz-js-TEP" secondAttribute="trailing" constant="12" id="VoK-WL-cCU"/>
                             <constraint firstItem="vHV-Tg-FON" firstAttribute="leading" secondItem="Zg1-Fe-kHf" secondAttribute="leading" constant="8" id="YDb-8l-enc"/>
                             <constraint firstItem="hef-by-uiA" firstAttribute="top" secondItem="Zg1-Fe-kHf" secondAttribute="top" constant="4" id="a1b-tL-fef"/>
-                            <constraint firstItem="ne8-6G-ens" firstAttribute="leading" secondItem="vHV-Tg-FON" secondAttribute="trailing" constant="8" id="bn2-Om-GaX"/>
                             <constraint firstItem="hef-by-uiA" firstAttribute="leading" secondItem="Zg1-Fe-kHf" secondAttribute="leading" constant="8" id="cGe-Fk-NLv"/>
+                            <constraint firstItem="cgz-js-TEP" firstAttribute="top" secondItem="54T-Wu-xw5" secondAttribute="bottom" constant="4" id="dPm-Mb-fub"/>
                             <constraint firstItem="Ips-oN-D25" firstAttribute="top" secondItem="f0P-1x-zXk" secondAttribute="bottom" constant="4" id="dV3-ji-PrW"/>
                             <constraint firstAttribute="trailing" secondItem="f0P-1x-zXk" secondAttribute="trailing" constant="4" id="exb-zx-ceq"/>
                             <constraint firstAttribute="trailing" secondItem="Ips-oN-D25" secondAttribute="trailing" constant="8" id="gLb-1z-KrL"/>
-                            <constraint firstItem="dIK-cx-mz5" firstAttribute="top" secondItem="54T-Wu-xw5" secondAttribute="bottom" constant="8" id="jNA-v8-7H8"/>
                             <constraint firstItem="54T-Wu-xw5" firstAttribute="leading" secondItem="Zg1-Fe-kHf" secondAttribute="leading" constant="16" id="lau-Fg-J3m"/>
                             <constraint firstAttribute="trailing" secondItem="54T-Wu-xw5" secondAttribute="trailing" constant="16" id="lcN-VF-uHi"/>
                             <constraint firstItem="f0P-1x-zXk" firstAttribute="top" secondItem="Zg1-Fe-kHf" secondAttribute="top" constant="4" id="lrj-nG-vWD"/>
+                            <constraint firstItem="cgz-js-TEP" firstAttribute="leading" secondItem="Zg1-Fe-kHf" secondAttribute="leading" constant="8" id="mUU-6w-u7i"/>
                             <constraint firstItem="Ips-oN-D25" firstAttribute="leading" secondItem="Zg1-Fe-kHf" secondAttribute="leading" constant="8" id="oJ3-fs-jIY"/>
                             <constraint firstItem="hef-by-uiA" firstAttribute="width" secondItem="Zg1-Fe-kHf" secondAttribute="width" multiplier="0.6" id="qbZ-dn-bdu"/>
                             <constraint firstAttribute="bottom" secondItem="vHV-Tg-FON" secondAttribute="bottom" constant="8" id="qlS-f1-sm3"/>
                             <constraint firstItem="54T-Wu-xw5" firstAttribute="top" secondItem="Ips-oN-D25" secondAttribute="bottom" constant="8" id="sJo-1s-SFN"/>
                             <constraint firstItem="f0P-1x-zXk" firstAttribute="leading" secondItem="hef-by-uiA" secondAttribute="trailing" constant="8" id="sfE-Mn-f51"/>
+                            <constraint firstItem="vHV-Tg-FON" firstAttribute="top" secondItem="cgz-js-TEP" secondAttribute="bottom" constant="4" id="toU-dJ-D4L"/>
                             <constraint firstItem="Ips-oN-D25" firstAttribute="top" secondItem="hef-by-uiA" secondAttribute="bottom" constant="4" id="yQq-ko-PYg"/>
                         </constraints>
                     </view>
@@ -162,9 +179,9 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="acceptedAnswerIdLabel" destination="ne8-6G-ens" id="j7d-y7-MpU"/>
+                <outlet property="acceptedAnswerIdButton" destination="tjJ-4t-g4S" id="guB-W8-8Af"/>
                 <outlet property="answerCountLabel" destination="vHV-Tg-FON" id="PfB-gT-ac8"/>
-                <outlet property="questionNumberLabel" destination="dIK-cx-mz5" id="SlI-XD-rCE"/>
+                <outlet property="questionNumberButton" destination="cgz-js-TEP" id="8Uu-SL-bvn"/>
                 <outlet property="questionScoreLabel" destination="f0P-1x-zXk" id="8H0-Fs-dPb"/>
                 <outlet property="questionTitleLabel" destination="Ips-oN-D25" id="tEE-E3-syC"/>
                 <outlet property="timestampLabel" destination="hef-by-uiA" id="Uez-zT-dAR"/>
